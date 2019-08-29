@@ -1,0 +1,25 @@
+---
+- name: Run ntpd prereq
+  import_tasks: prereq/ntpd.yml
+  tags:
+  - ntpd
+
+- name: Run kernel parameter prereq
+  import_tasks: prereq/kernel.yml
+  tags:
+  - kernel
+
+- name: Run packages prereq
+  import_tasks: prereq/packages.yml
+  tags:
+  - packages
+
+- name: Run shm prereq
+  import_tasks: prereq/fstab.yml
+  tags:
+  - fstab
+
+- name: Run network prereq
+  import_tasks: prereq/network.yml
+  tags:
+  - network
