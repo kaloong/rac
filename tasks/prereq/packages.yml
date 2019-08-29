@@ -1,0 +1,16 @@
+---
+#- name: Enable prereq repo
+#  yum:
+#    enablerepo: rhel-7-server-optional-rpms
+#    update_cache: true
+
+- name: Install prereq packages
+  yum:
+    name: "{{ packages }}"
+    state: present
+    enablerepo: rhel-7-server-optional-rpms
+    update_cache: true
+  vars:
+    packages:
+    - compat-libstdc++-33
+    - libstdc++

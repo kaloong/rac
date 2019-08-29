@@ -1,0 +1,7 @@
+---
+- name: Add shm line in fstab
+  lineinfile:
+    path: /etc/fstab
+    line: "tmpfs     /dev/shm       tmpfs   defaults,size=2G        0 0"
+    backup: yes
+    state: present

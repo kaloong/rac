@@ -1,0 +1,8 @@
+---
+- name:  Setup network
+  lineinfile:
+    path: /etc/sysconfig/network
+    line: "NOZEROCONF=YES"
+    backup: yes
+    state: present
+  notify: Restart network
